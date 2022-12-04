@@ -1,7 +1,12 @@
 class Router:
-    def __init__(self, users, password=''):
+    def __init__(self, name='', users=[], password='', status=''):
+        self.name = name
         self.users = users
         self.password = password
+        self.status = status
+
+    def open_close(self, oc):
+        self.status = oc
 
     def add_user(self, new_user):
         if isinstance(new_user, str):
@@ -22,4 +27,5 @@ class Router:
             print('Password must be a string.')
 
     def __str__(self):
-        return f'Users:{self.users} Password: {self.password}'
+        return f'{self.name}-Users: {self.users} Password: ' \
+               f'{self.password} Status: {self.status}'
