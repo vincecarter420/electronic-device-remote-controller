@@ -18,15 +18,19 @@ class Fan:
         else:
             print('Speed must be greater equal to 0 and less than 4')
 
-    def swing(self, swing):
-        if swing == 'ON' or swing == 'OFF':
-            if self.status == 'open':
-                self.fan[1] = swing
-            else:
-                raise ValueError("Status must be 'ON'")
+    def swing(self):
+        if self.status == 'open':
+            if self.fan[1] == 'OFF':
+                self.fan[1] = 'ON'
+                print(f'Fan swing is now ON')
+            elif self.fan[1] == 'ON':
+                self.fan[1] = 'OFF'
+                print(f'Fan swing is now OFF')
+        else:
+            print("Status must be 'ON'")
 
     def mode(self, index):
-        fan_mode = ['normal', 'cooling']
+        fan_mode = ['Normal', 'Cooling']
         self.mode = str(fan_mode[int(index) - 1])
 
     def __str__(self):
