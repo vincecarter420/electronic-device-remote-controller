@@ -4,4 +4,5 @@ class Home:
 
     def show_status(self):
         for device in self.devices:
+            print('')
             print(device)
