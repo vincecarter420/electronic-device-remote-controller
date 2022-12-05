@@ -15,12 +15,22 @@ class RWfile:
         return data_list
 
     def write(self):
-        season = input('Enter season in your area: ')
-        temp = input('Enter temperature in your area: ')
-        key = ['season', 'temp']
-        try:
-            with open(self.filename, 'a') as file:
-                dict_write = csv.DictWriter(file, key)
-                dict_write.writerow({'season': season, 'temp': temp})
-        except FileNotFoundError:
-            print(f'{self.filename} file is not found')
+        while True:
+            season = input('Enter season in your area: ')
+            temp = input('Enter temperature in your area: ')
+            if season in ['winter', 'summer', 'rainy'] \
+                    and temp in ['15', '16', '17', '18', '19',
+                                 '20', '21', '22', '23', '24',
+                                 '25', '26', '27', '28', '29',
+                                 '30', '31', '32']:
+                key = ['season', 'temp']
+                try:
+                    with open(self.filename, 'a') as file:
+                        dict_write = csv.DictWriter(file, key)
+                        dict_write.writerow({'season': season, 'temp': temp})
+                        break
+                except FileNotFoundError:
+                    print(f'{self.filename} file is not found')
+            else:
+                print('Season must be a english character and '
+                      'temp must be a number in range 15-32')
