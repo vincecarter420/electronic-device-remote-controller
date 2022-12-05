@@ -8,6 +8,7 @@ from RWfile import RWfile
 
 '-----------------------------------------------------------------------------'
 
+data = RWfile('database.csv')
 ac1 = AC('bedroom AC', '-', '-', ['0', 'OFF'], 'close')
 ac2 = AC('living room AC', '-', '-', ['0', 'OFF'], 'close')
 ac3 = AC('dining room AC', '-', '-', ['0', 'OFF'], 'close')
@@ -60,9 +61,10 @@ while True:
             print('2. adjust a fan swing')
             print('3. adjust fan speed')
             print('4. adjust temperature')
-            print('5. adjust mode')
-            print(f'6. show status of {getattr(ac1, "name")}')
-            print('7. back')
+            print('5. add temperature and season manually')
+            print('6. adjust mode')
+            print(f'7. show status of {getattr(ac1, "name")}')
+            print('8. back')
             print('')
             print('ΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞ'
                   'ΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞ')
@@ -109,6 +111,13 @@ while True:
                 time.sleep(1.5)
                 os.system('clear')
             if choice_ac1 == 5:
+                data.write()
+                ac1.manully()
+                print(f'{getattr(ac1, "name")} adjusts proper '
+                      f'temperature from given temperature and season.')
+                time.sleep(1.5)
+                os.system('clear')
+            if choice_ac1 == 6:
                 print('1. Auto mode')
                 print('2. Cool mode')
                 print('3. Dry mode')
@@ -126,13 +135,13 @@ while True:
                         f'Current mode is {getattr(ac1, "mode")} mode')
                 time.sleep(1.5)
                 os.system('clear')
-            if choice_ac1 == 6:
+            if choice_ac1 == 7:
                 print(ac1)
                 print("press 'Enter' to go back.")
                 press = input('')
                 if press == '':
                     os.system('clear')
-            if choice_ac1 == 7:
+            if choice_ac1 == 8:
                 os.system('clear')
                 break
     if num == 2:
@@ -157,9 +166,10 @@ while True:
             print('2. adjust a fan swing')
             print('3. adjust fan speed')
             print('4. adjust temperature')
-            print('5. adjust mode')
-            print(f'6. show status of {getattr(ac2, "name")}')
-            print('7. back')
+            print('5. add temperature and season manually')
+            print('6. adjust mode')
+            print(f'7. show status of {getattr(ac1, "name")}')
+            print('8. back')
             print('')
             print('ΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞ'
                   'ΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞ')
@@ -206,6 +216,11 @@ while True:
                 time.sleep(1.5)
                 os.system('clear')
             if choice_ac2 == 5:
+                data.write()
+                ac2.manully()
+                print(f'{getattr(ac2, "name")} adjusts proper '
+                      f'temperature from given temperature and season.')
+            if choice_ac2 == 6:
                 print('1. Auto mode')
                 print('2. Cool mode')
                 print('3. Dry mode')
@@ -223,13 +238,13 @@ while True:
                         f'Current mode is {getattr(ac2, "mode")} mode')
                 time.sleep(1.5)
                 os.system('clear')
-            if choice_ac2 == 6:
+            if choice_ac2 == 7:
                 print(ac2)
                 print("press 'Enter' to go back.")
                 press = input('')
                 if press == '':
                     os.system('clear')
-            if choice_ac2 == 7:
+            if choice_ac2 == 8:
                 os.system('clear')
                 break
     if num == 3:
@@ -254,9 +269,10 @@ while True:
             print('2. adjust a fan swing')
             print('3. adjust fan speed')
             print('4. adjust temperature')
-            print('5. adjust mode')
-            print(f'6. show status of {getattr(ac3, "name")}')
-            print('7. back')
+            print('5. add temperature and season manually')
+            print('6. adjust mode')
+            print(f'7. show status of {getattr(ac1, "name")}')
+            print('8. back')
             print('')
             print('ΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞ'
                   'ΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞ')
@@ -302,7 +318,12 @@ while True:
                         print(f'Now, temperature is {temp}°C')
                 time.sleep(1.5)
                 os.system('clear')
-            if choice_ac3 == 5:
+            if choice_ac2 == 5:
+                data.write()
+                ac2.manully()
+                print(f'{getattr(ac2, "name")} adjusts proper '
+                      f'temperature from given temperature and season...')
+            if choice_ac3 == 6:
                 print('1. Auto mode')
                 print('2. Cool mode')
                 print('3. Dry mode')
@@ -320,13 +341,13 @@ while True:
                         f'Current mode is {getattr(ac3, "mode")} mode')
                 time.sleep(1.5)
                 os.system('clear')
-            if choice_ac3 == 6:
+            if choice_ac3 == 7:
                 print(ac3)
                 print("press 'Enter' to go back.")
                 press = input('')
                 if press == '':
                     os.system('clear')
-            if choice_ac3 == 7:
+            if choice_ac3 == 8:
                 os.system('clear')
                 break
     if num == 4:
@@ -607,7 +628,7 @@ while True:
                     else:
                         i += 1
                         print(f'Wrong password, '
-                             f'Please try again (attempt:{i})')
+                              f'Please try again (attempt:{i})')
                 time.sleep(0.5)
                 os.system('clear')
             if choice == 5:
