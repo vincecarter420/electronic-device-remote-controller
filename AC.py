@@ -67,6 +67,23 @@ class AC:
                 if int(data[randomrange]['temp']) > 23:
                     self.temp = '26'
 
+    def manully(self):
+        if data[-1]['season'] == 'summer':
+            if 25 <= int(data[-1]['temp']) <= 32:
+                self.temp = '22'
+            if int(data[-1]['temp']) > 32:
+                self.temp = '20'
+        if data[-1]['season'] == 'rainy':
+            if 20 <= int(data[-1]['temp']) <= 24:
+                self.temp = '26'
+            if int(data[-1]['temp']) > 24:
+                self.temp = '24'
+        if data[-1]['season'] == 'winter':
+            if 15 <= int(data[-1]['temp']) <= 23:
+                self.temp = '27'
+            if int(data[-1]['temp']) > 23:
+                self.temp = '26'
+
     def __str__(self):
         return f'{self.name}-Status:{self.status} Temperature:{self.temp}°C ' \
                f'Mode:{self.mode} Speed:{self.fan[0]} Swing:{self.fan[1]}'
