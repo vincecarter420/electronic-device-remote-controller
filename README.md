@@ -2,11 +2,11 @@
 
 ## Overview & Features
 
-Electronic device remote controller can control all electronic devices that can 
-connect to this controller such as Air-conditioner, Fan and Wifi router. 
-In future, it will include more device like smart door, computer or television. 
+Electronic device remote controller can control all electronic devices that can
+connect to this controller such as Air-conditioner, Fan and Wifi router.
+In future, it will include more device like smart door, computer or television.
 
-Briefly, this controller can control all function that each device features 
+Briefly, this controller can control all function that each device features
 should to have.
 
 ## Libraries and Tool
@@ -28,7 +28,6 @@ should to have.
     data = [{'season': 'rainy', 'temp': '26'}, 
             {'season': 'summer', 'temp': '36'}]
 
-    
 ## Design & Structure
 
 **AC.py** is a one of all objects that include function that Air-conditioner
@@ -45,13 +44,13 @@ It contains `name`, `temp`, `mode`, `fan` and `status` attributes
 have
 like `adjust fan speed` that open and close device function is
 include in this function, `adjust fan swing`, `adjust all Fan modes`
-and `display Fan status`. It contains `name`, `mode`, `fan` and 
+and `display Fan status`. It contains `name`, `mode`, `fan` and
 `status` attributes
 
 **Router.py** is a one of all objects that include function that Router should
 to
 have like `open and close the Router`, `add user` this function is adding one
-user per one using this function. It contains `name`, `users`, `password` and 
+user per one using this function. It contains `name`, `users`, `password` and
 `status` attributes
 
 **Home.py** is the object that show all device status in one virtual home so it
