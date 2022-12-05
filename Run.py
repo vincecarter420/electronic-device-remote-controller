@@ -641,4 +641,3 @@ while True:
             gb = input('Press Enter to go back.')
             if gb == '':
                 os.system('clear')
-                break
