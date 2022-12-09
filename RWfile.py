@@ -3,9 +3,11 @@ import csv
 
 class RWfile:
     def __init__(self, filename=''):
+        '''create filename value'''
         self.filename = filename
 
     def read(self):
+        '''read a file'''
         try:
             with open(self.filename, 'r') as file:
                 dict_read = csv.DictReader(file)
@@ -15,6 +17,7 @@ class RWfile:
         return data_list
 
     def write(self):
+        '''write a file'''
         while True:
             season = input('Enter season in your area: ')
             temp = input('Enter temperature in your area: ')
