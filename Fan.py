@@ -1,12 +1,18 @@
 class Fan:
     def __init__(self, name='', fan=['0', 'OFF'], mode='',
                  status='close'):
+        '''create name, fan, mode and status values'''
         self.name = name
         self.fan = fan
         self.mode = mode
         self.status = status
 
     def speed(self, speed):
+        '''this function is for selecting the fan speed and including open and
+        close function
+            if user selects '0' then the device close, if user select number
+            between 1 and 3 the device will open and speed is at user selected
+            speed'''
         if 0 <= int(speed) <= 3:
             if int(speed) == 0:
                 self.fan[0] = speed
@@ -19,6 +25,10 @@ class Fan:
             print('Speed must be greater equal to 0 and less than 4')
 
     def swing(self):
+        '''this function is for adjusting fan swing
+            the device must be open if not user cannot access this function
+            if user turn on print 'Fan swing is now ON',
+            if user turn off print 'Fan swing is now OFF' '''
         if self.status == 'open':
             if self.fan[1] == 'OFF':
                 self.fan[1] = 'ON'
@@ -30,9 +40,13 @@ class Fan:
             print("Status must be 'ON'")
 
     def mode(self, index):
+        '''this function is for changing the Fan mode.
+            Fan modes are normal and cooling mode.'''
         fan_mode = ['Normal', 'Cooling']
         self.mode = str(fan_mode[int(index) - 1])
 
     def __str__(self):
+        '''print out the status of this device
+            example: Fan1-Status:open Mode:normal Speed:2 Swing:ON'''
         return f'{self.name}-Status:{self.status} Mode:{self.mode}' \
                f' Speed:{self.fan[0]} Swing:{self.fan[1]}'
