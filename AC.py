@@ -7,8 +7,8 @@ randomrange = random.randrange(0, len(data))  # random a situation from data
 
 class AC:
 
-    def __init__(self, name:str, temp:str, mode:str, fan:list,
-                 status:str):
+    def __init__(self, name: str, temp: str, mode: str, fan: list,
+                 status: str):
         '''create name, temperature, mode, fan, and status values'''
         self.__name = name
         self.temp = temp
