@@ -2,7 +2,7 @@ import csv
 
 
 class RWfile:
-    def __init__(self, filename=''):
+    def __init__(self, filename:str):
         '''create filename value'''
         self.filename = filename
 
