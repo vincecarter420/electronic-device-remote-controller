@@ -1,10 +1,15 @@
 class Router:
-    def __init__(self, name:str, users:list, password:str, status:str):
+    def __init__(self, name: str, users: list, password: str, status: str):
         '''creates name, users, password and status values'''
         self.name = name
         self.users = users
-        self.password = password
+        self.__password = password
         self.status = status
+
+    @property
+    def password(self):
+        '''getter'''
+        return self.__password
 
     def change_pw(self, new_password):
         '''changing password function
@@ -13,7 +18,7 @@ class Router:
         if not print 'Password must have more than 7 characters.' '''
         if isinstance(new_password, str):
             if len(new_password) > 6:
-                self.password = new_password
+                self.__password = new_password
             else:
                 print('Password must have more than 7 characters.')
         else:
@@ -41,4 +46,4 @@ class Router:
         example Router1-User: ['mom','dad','bro','sis'] Password: abc123123-
         Status: open'''
         return f'{self.name}-Users: {self.users} Password: ' \
-               f'{self.password} Status: {self.status}'
+               f'{self.__password} Status: {self.status}'
