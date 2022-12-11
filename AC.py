@@ -7,14 +7,19 @@ randomrange = random.randrange(0, len(data))  # random a situation from data
 
 class AC:
 
-    def __init__(self, name='', temp='', mode='', fan=['0', 'OFF'],
-                 status='close'):
+    def __init__(self, name:str, temp:str, mode:str, fan:list,
+                 status:str):
         '''create name, temperature, mode, fan, and status values'''
         self.__name = name
         self.temp = temp
         self.mode = mode
         self.fan = fan
         self.status = status
+
+    @property
+    def name(self):
+        '''getter'''
+        return self.__name
 
     def open_close(self, oc):
         '''this function is for opening and closing the AC
@@ -48,6 +53,7 @@ class AC:
          the least speed is at 1 and the most speed is at 5'''
         if 1 <= speed <= 5:
             self.fan[0] = str(speed)
+            print('Now, speed is ', format(speed))
         else:
             print('speed must be greater than 0 and less than 6.')
 
@@ -61,7 +67,7 @@ class AC:
             else:
                 print('temperature must be greater than 14 and less than 31.')
 
-    def mode(self, index):
+    def adjust_mode(self, index):
         '''this function is for changing the AC mode.
         AC modes are auto, cool, dry, eco, heat and fan mode.'''
         ac_mode = ['Auto', 'Cool', 'Dry', 'Eco', 'Heat', 'Fan']
@@ -119,5 +125,5 @@ class AC:
     def __str__(self):
         '''print out the status of the AC
         example: AC1-Status:open Temperature:24°C Mode:Cool Speed:2 Swing:OFF'''
-        return f'{self.name}-Status:{self.status} Temperature:{self.temp}°C ' \
+        return f'{self.__name}-Status:{self.status} Temperature:{self.temp}°C ' \
                f'Mode:{self.mode} Speed:{self.fan[0]} Swing:{self.fan[1]}'
