@@ -1,5 +1,5 @@
 class Home:
-    def __init__(self, devices):
+    def __init__(self, devices: list):
         '''create devices value'''
         self.devices = devices
 
