@@ -1,10 +1,23 @@
 class Router:
-    def __init__(self, name='', users=[], password='', status=''):
+    def __init__(self, name:str, users:list, password:str, status:str):
         '''creates name, users, password and status values'''
         self.name = name
         self.users = users
         self.password = password
         self.status = status
+
+    def change_pw(self, new_password):
+        '''changing password function
+        new password must be string if not print 'Password must be a string'
+        and new password must have more than 7 character
+        if not print 'Password must have more than 7 characters.' '''
+        if isinstance(new_password, str):
+            if len(new_password) > 6:
+                self.password = new_password
+            else:
+                print('Password must have more than 7 characters.')
+        else:
+            print('Password must be a string.')
 
     def open_close(self, oc):
         '''simple open and close function'''
@@ -22,19 +35,6 @@ class Router:
                 print('Router already has maximum users.')
         else:
             print('Name of user must be a string.')
-
-    def change_pw(self, new_password):
-        '''changing password function
-        new password must be string if not print 'Password must be a string'
-        and new password must have more than 7 character
-        if not print 'Password must have more than 7 characters.' '''
-        if isinstance(new_password, str):
-            if len(new_password) > 6:
-                self.password = new_password
-            else:
-                print('Password must have more than 7 characters.')
-        else:
-            print('Password must be a string.')
 
     def __str__(self):
         '''print out router status
