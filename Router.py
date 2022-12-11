@@ -1,10 +1,15 @@
 class Router:
     def __init__(self, name: str, users: list, password: str, status: str):
         '''creates name, users, password and status values'''
-        self.name = name
+        self.__name = name
         self.users = users
         self.__password = password
         self.status = status
+
+    @property
+    def name(self):
+        '''getter'''
+        return self.__name
 
     @property
     def password(self):
