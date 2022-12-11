@@ -61,5 +61,8 @@ read a data from `database.csv` and send a data to `AC.py`. In `write` function
 user can add more season and temperature into `database.csv`
 
 **Run.py** is progression of all device that are included in this file like an
-application.
+application. In this file, it includes `ac menu`, `fan menu`, `rt menu` stand 
+for router menu and `home menu` functions. All functions work like the same way 
+that will display a function of each device.
 
+GitHub URL : [https://github.com/vincecarter420/electronic-device-remote-controller](https://github.com/vincecarter420/electronic-device-remote-controller)
