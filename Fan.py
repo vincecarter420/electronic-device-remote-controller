@@ -1,6 +1,6 @@
 class Fan:
-    def __init__(self, name:str, fan:list, mode:str,
-                 status:str):
+    def __init__(self, name: str, fan: list, mode: str,
+                 status: str):
         '''create name, fan, mode and status values'''
         self.name = name
         self.fan = fan
