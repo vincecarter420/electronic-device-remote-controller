@@ -2,10 +2,15 @@ class Fan:
     def __init__(self, name: str, fan: list, mode: str,
                  status: str):
         '''create name, fan, mode and status values'''
-        self.name = name
+        self.__name = name
         self.fan = fan
         self.mode = mode
         self.status = status
+
+    @property
+    def name(self):
+        '''getter'''
+        return self.__name
 
     def speed(self, speed):
         '''this function is for selecting the fan speed and including open and
